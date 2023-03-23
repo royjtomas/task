@@ -88,7 +88,7 @@ class Main extends BaseController
                             return redirect()->to('admin');
                         // } else {
                         //     return redirect()->to('login');
-                        // }
+                        // }    
                     } else {
                         return redirect()->to('login');
                     }
@@ -146,17 +146,27 @@ class Main extends BaseController
                 break;
             case 'add_url': {
 
-                    $qturl_m = new \App\Models\CuteUrl();
-                    $user = session()->get('user_session');
+                $qturl_m = new \App\Models\CuteUrl();
+                $user = session()->get('user_session');
 
-                    // your code here 😏
+                // your code here 😏 //check if source url is empty
+                $user_short = new \App\Models\CuteUrl();
+                $source = $this->request->getPost('source_url');
 
-                    return redirect()->to('admin');
+                if (!empty($source))
+                {
+                    $shorten = random_string('alnum',4);
+
+                    $user_short->save([
+                    'source_url' => $source,
+                    'target_code'=>$shorten
+                    ]);
                 }
-            default:
-                return redirect()->to('login');
+                return redirect()->to('admin');
+                break;
         }
     }
+}
 
     public function shortcut_url($custom)
     {
