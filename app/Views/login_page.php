@@ -34,7 +34,7 @@ body {
 <body>
 
 <div class="container col-xl-10 col-xxl-8 px-4 ">
-    <h1 class="text-center text-black">URL SHORTENING SYSTEM</h1>
+    <h1 class="text-center " style="color: #949494">URL SHORTENING SYSTEM</h1>
     <div class="row align-items-center g-lg-5 ">
         <div class="col-md-10 mx-auto col-lg-5">
         <h2 class="text-center mb-4" style="color: white;">LOGIN</h2>
@@ -49,7 +49,7 @@ body {
                 </div>
                 <div class="checkbox mb-3">
                     <label>
-                        <input type="checkbox" disabled> Remember me
+                        <input type="checkbox" enabled> Remember me
                     </label>
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
